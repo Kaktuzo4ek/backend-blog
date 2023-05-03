@@ -61,6 +61,12 @@ app.post("/upload", checkAuth, upload.single("image"), (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "API WORKING",
+  });
+});
+
 app.get("/tags", PostController.getLastTags);
 
 app.get("/posts", PostController.getAll);
