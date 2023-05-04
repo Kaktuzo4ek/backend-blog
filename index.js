@@ -16,7 +16,11 @@ import { UserController, PostController } from "./controllers/index.js";
 
 await mongoose
   .connect(
-    "mongodb+srv://slobodianvit2103:u6MIITyWAXOqA0tm@cluster0.i8nuamy.mongodb.net/blog?retryWrites=true&w=majority"
+    "mongodb+srv://slobodianvit2103:u6MIITyWAXOqA0tm@cluster0.i8nuamy.mongodb.net/blog?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
   )
   .then(() => {
     console.log("DB OK!");
